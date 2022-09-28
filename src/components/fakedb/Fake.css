@@ -1,0 +1,10 @@
+.cetagory {
+    background-color: white;
+    padding: 5px;
+    margin: 10px;
+}
+
+.cetagory img {
+    width: 200px;
+    height: 100px;
+}
