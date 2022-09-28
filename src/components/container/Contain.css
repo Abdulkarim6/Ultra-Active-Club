@@ -5,8 +5,17 @@
 }
 .work-out{
     margin-left: 20px;
+    margin-top: 70px;
 }
 
 .calculation{
     background-color: mediumslateblue;
+    position:static;
+    top: 0;
+}
+
+@media screen and (max-width : 667px) {
+    .contain {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

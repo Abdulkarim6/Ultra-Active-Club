@@ -12,12 +12,12 @@ const Fake = () => {
     }, [])
 
     return (
-        <div>
+        <div className='cetagories'>
             {
                 cetagories.map(cetagory => <Cetagory
-                     cetagory={cetagory}
-                     key={cetagory.id}
-                     ></Cetagory>)
+                    cetagory={cetagory}
+                    key={cetagory.id}
+                ></Cetagory>)
             }
 
         </div>
@@ -26,13 +26,14 @@ const Fake = () => {
 
 const Cetagory = (props) => {
     // console.log(props.cetagory);
-    const {picture, name, time} = props.cetagory;
+    const { picture, name, time } = props.cetagory;
     // console.log(picture, name, time);
     return (
         <div className='cetagory'>
             <img src={picture} alt="" />
             <h4> {name} </h4>
             <p> {time} S</p>
+            <button type="button" class="btn btn-primary">add to list</button>
         </div>
     )
 }
