@@ -1,0 +1,12 @@
+.contain{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-color: lightgrey;
+}
+.work-out{
+    margin-left: 20px;
+}
+
+.calculation{
+    background-color: mediumslateblue;
+}

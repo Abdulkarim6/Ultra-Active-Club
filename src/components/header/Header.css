@@ -1,0 +1,10 @@
+.header{
+    display: flex;
+    align-items: center;
+    color: rgb(71, 71, 177);
+}
+.header img{
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+}
