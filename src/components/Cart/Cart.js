@@ -9,14 +9,34 @@ const Cart = (props) => {
         const time = exerciseTime + cetagory.time;
         exerciseTime = time;
     }
-    /* ------------------------------------ */
+
     const [breakTime, breakTimes] = useState(0)
-    // // console.log(breakTime);
     const handleAddToBreakTime = (time) => {
-       breakTimes(time);
-       
+        breakTimes(time);
+        let breakTimeSecond;
+
+        // get breakTimeSecond
+        const storeSecond = localStorage.getItem('breakTime');
+        if (storeSecond) {
+            breakTimeSecond = JSON.parse(storeSecond);
+        }
+        else {
+            breakTimeSecond = {};
+        }
+
+        //  add quantity
+        const quantity = breakTimeSecond[time];
+        if (quantity) {
+            const newQuantity = quantity + 1;
+            breakTimeSecond[time] = newQuantity;
+        }
+        else {
+            breakTimeSecond[time] = 1;
+        }
+        localStorage.setItem('breakTime', JSON.stringify(breakTimeSecond));
+
     }
-    /* ------------------------------------------------------------ */
+
     return (
         <div className='cart'>
             <div className='author-info'>
