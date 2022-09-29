@@ -4,8 +4,10 @@ import img from '../../header-logo/header-logo.jpg'
 const Header = () => {
     return (
         <div className='header'>
-            <img src={img} alt="" />
-            <h2>Gym Fitness Club</h2>
+            <div className='title'>
+                <img src={img} alt="" />
+                <h2>Gym Fitness Club</h2>
+            </div>
         </div>
     );
 };

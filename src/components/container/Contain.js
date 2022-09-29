@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Blog from '../../blog/Blog';
 import Cart from '../Cart/Cart';
 import Cetagory from '../Cetagory/Cetagory';
 import Header from '../header/Header';
@@ -14,13 +15,11 @@ const Contain = () => {
     }, []);
 
     const [cart, setCart] = useState([]);
-    
+
     const dataAddToCart = (cetagory) => {
         const newCart = [...cart, cetagory]
         setCart(newCart);
     }
-
-    // const seconds = []
 
     return (
         <div className='contain'>
@@ -28,16 +27,19 @@ const Contain = () => {
                 <div>
                     <Header></Header>
                 </div>
-                <div>
-                    <div className='cetagories'>
-                        {
-                            cetagories.map(cetagory => <Cetagory
-                                cetagory={cetagory}
-                                key={cetagory.id}
-                                dataAddToCart={dataAddToCart}
-                            ></Cetagory>)
-                        }
-                    </div>
+
+                <div className='cetagories'>
+                    {
+                        cetagories.map(cetagory => <Cetagory
+                            cetagory={cetagory}
+                            key={cetagory.id}
+                            dataAddToCart={dataAddToCart}
+                        ></Cetagory>)
+                    }
+                </div>
+
+                <div className='blog-contain'>
+                   <Blog></Blog>
                 </div>
             </div>
             <div className="calculation">
