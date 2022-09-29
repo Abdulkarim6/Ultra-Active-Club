@@ -23,7 +23,10 @@ const Blog = () => {
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
-                           </div>
+                            <p> 1. Props are used to pass data from one component to another.</p>
+                            <p> 2. The state is a local data storage that is local to the component only and cannot be passed to other components.</p>
+                            <p>3. The this.setState property is used to update the state values in the component.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="accordion-item">
