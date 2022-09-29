@@ -36,7 +36,10 @@ const Blog = () => {
                         </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, </div>
+                        <div class="accordion-body">
+                            <p>The useEffect Hook allows you to perform side effects in your components.</p>
+                            <p>Some examples of side effects are: fetching data, directly updating the DOM, and timers.</p>
+                            <p> useEffect accepts two arguments. The second argument is optional.</p> </div>
                     </div>
                 </div>
             </div>
