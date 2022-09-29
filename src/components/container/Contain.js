@@ -43,7 +43,7 @@ const Contain = () => {
                 </div>
             </div>
             <div className="calculation">
-                <Cart loadCetagory={cart}></Cart>
+                <Cart loadCetagorys={cart}></Cart>
             </div>
         </div>
     );

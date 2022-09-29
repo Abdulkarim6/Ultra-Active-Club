@@ -3,21 +3,19 @@ import './Cart.css';
 import author from '../../header-logo/author.jpg'
 import { useState } from 'react';
 const Cart = (props) => {
-    const { loadCetagory } = props;
+    const { loadCetagorys } = props;
     let exerciseTime = 0;
-    for (const cetagory of loadCetagory) {
+    for (const cetagory of loadCetagorys) {
         const time = exerciseTime + cetagory.time;
         exerciseTime = time;
     }
     /* ------------------------------------ */
-    //  const [button, setButtons] = useState([])
-    // const handleAddToBreakTime = () =>{
-    //     const buttons = document.getElementsByClassName('breakTime');
-    //     for(const button of buttons)
-    //     button.addEventListener('click', function(){
-    //         console.log('click');
-    //     })
-    // }
+    const [breakTime, breakTimes] = useState(0)
+    // // console.log(breakTime);
+    const handleAddToBreakTime = (time) => {
+       breakTimes(time);
+       
+    }
     /* ------------------------------------------------------------ */
     return (
         <div className='cart'>
@@ -30,20 +28,20 @@ const Cart = (props) => {
             </div>
 
             <h4>Add A Break</h4>
-            <div className='for-break'>
-                <button type="button" className="badge rounded-pill btn btn-primary"> <span className='breakTime'>10</span>s</button>
-                <button type="button" className="badge rounded-pill btn btn-primary"> <span className='breakTime'>20</span>s</button>
-                <button type="button" className="badge rounded-pill btn btn-primary"> <span className='breakTime'>30</span>s</button>
-                <button type="button" className="badge rounded-pill btn btn-primary"> <span className='breakTime'>40</span>s</button>
-                <button type="button" className="badge rounded-pill btn btn-primary"> <span className='breakTime'>50</span>s</button>
+            <div className='for-break '>
+                <button onClick={() => { handleAddToBreakTime(10) }} type="button" className="clk-btn badge rounded-pill btn btn-primary">10 s</button>
+                <button onClick={() => { handleAddToBreakTime(20) }} type="button" className="clk-btn badge rounded-pill btn btn-primary">20 s</button>
+                <button onClick={() => { handleAddToBreakTime(30) }} type="button" className="clk-btn badge rounded-pill btn btn-primary">30 s</button>
+                <button onClick={() => { handleAddToBreakTime(40) }} type="button" className="clk-btn badge rounded-pill btn btn-primary">40 s</button>
+                <button onClick={() => { handleAddToBreakTime(50) }} type="button" className="clk-btn badge rounded-pill btn btn-primary">50 s</button>
             </div>
 
             <h4 className='details-txt'>Exercise Details</h4>
             <div className='details'>
                 <h5>Exercise time : {exerciseTime} second  </h5>
-                <h5>Break time : </h5>
+                <h5>Break time : {breakTime} </h5>
             </div>
-            <button type="button" class="btn btn-primary btn-activity">Activity Completed </button>
+            <button type="button" className="btn btn-primary btn-activity">Activity Completed </button>
         </div>
     );
 };

@@ -7,7 +7,7 @@ const Cetagory = (props) => {
         <div className='cetagory'>
             <img src={picture} alt="" />
             <h4> {name} </h4>
-            <p> {time} S</p>
+            <p>Time required : {time} Second</p>
             <button onClick={() => dataAddToCart(cetagory)} type="button" className="btn btn-primary">add to list</button>
         </div>
     )
