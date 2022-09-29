@@ -1,22 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
-import Fake from '../fakedb/Fake';
+import Cetagory from '../Cetagory/Cetagory';
 import Header from '../header/Header';
 import './Contain.css'
 
 const Contain = () => {
+
+    const [cetagories, setCetagories] = useState([]);
+    useEffect(() => {
+        fetch('Data.json')
+            .then(res => res.json())
+            .then(data => setCetagories(data))
+    }, []);
+
+    const [cart, setCart] = useState([]);
+    
+    const dataAddToCart = (cetagory) => {
+        const newCart = [...cart, cetagory]
+        setCart(newCart);
+    }
+
+    // const seconds = []
+
     return (
         <div className='contain'>
             <div className="work-out">
                 <div>
-                  <Header></Header>
+                    <Header></Header>
                 </div>
                 <div>
-                  <Fake></Fake>
+                    <div className='cetagories'>
+                        {
+                            cetagories.map(cetagory => <Cetagory
+                                cetagory={cetagory}
+                                key={cetagory.id}
+                                dataAddToCart={dataAddToCart}
+                            ></Cetagory>)
+                        }
+                    </div>
                 </div>
             </div>
             <div className="calculation">
-                <Cart></Cart>
+                <Cart loadCetagory={cart}></Cart>
             </div>
         </div>
     );

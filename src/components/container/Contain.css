@@ -1,21 +1,34 @@
-.contain{
+.contain {
     display: grid;
     grid-template-columns: 3fr 1fr;
     background-color: lightgrey;
 }
-.work-out{
+
+.work-out {
     margin-left: 20px;
     margin-top: 70px;
 }
 
-.calculation{
-    background-color: mediumslateblue;
-    position:static;
+.calculation {
+    background-color: rgb(178, 169, 227);
+    position: static;
     top: 0;
 }
 
 @media screen and (max-width : 667px) {
     .contain {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.cetagories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+@media screen and (max-width : 667px) {
+    .cetagories {
         grid-template-columns: repeat(1, 1fr);
     }
 }
